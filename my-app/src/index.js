@@ -31,7 +31,7 @@ class Board extends React.Component {
 
   renderSquares(n) {
     let squares = [];
-    for (let i = n; i < n + 4; i++) {
+    for (let i = n; i < n + 4; i++) { //render squares
       squares.push(this.renderSquare(i));
     }
     return squares;
@@ -44,9 +44,9 @@ class Board extends React.Component {
   render() {
     // var board;
     let board = []
-    for (let i = 0; i<16;i+=4)
+    for (let i = 0; i<16;i+=4) //Render the rows
     {
-      board.push(
+      board.push( //stores rows with squares inside the board
         <div key={i} className="board-r">
             {this.renderRows(i)}
         </div>
@@ -54,9 +54,9 @@ class Board extends React.Component {
     }
     return (
       <div>
-        { board}
+        { board} 
       </div>
-    );
+    ); //return the whole board
   }
 }
 
@@ -199,7 +199,7 @@ function calculateWinner(squares) {
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c, d] = lines[i]; //Check for a fourth 
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c] && squares[a] === squares[d]) {
-      return { player: squares[a], line: [a, b, c,d] };
+      return { player: squares[a], line: [a, b, c,d] }; //Return all four win positions
     }
   }
   return null;
